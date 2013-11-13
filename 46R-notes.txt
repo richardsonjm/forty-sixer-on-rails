@@ -1,20 +1,20 @@
 Data structure:
 
 mountains
-name      id     hike_id
+name    id     hike_id
 
 
 hikes
-name      id 
+name    id 
 
 
 user
-name      id
+name    id
 
 
 user_hikes
-id        hike_id   user_id
+id      hike_id   user_id
 
 
 user_mountains
-id        user_id   mountain_id
+id      user_id   mountain_id
