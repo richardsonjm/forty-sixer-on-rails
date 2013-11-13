@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trek.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @trek.url %>
+</p>
+
+<p>
+  <strong>Diff:</strong>
+  <%= @trek.diff %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @trek.distance %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @trek.duration %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @trek.desc %>
+</p>
+
+<ul>
+  <strong>Mountains:</strong>
+  <% @trek.mountains.each do |mountain| %>
+  <li><%= mountain.name %></li>
+  <%end%>
+</ul>
+
+<%= link_to 'Edit', edit_trek_path(@trek) %> |
+<%= link_to 'Back', treks_path %>

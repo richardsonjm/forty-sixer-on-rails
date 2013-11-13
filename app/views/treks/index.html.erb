@@ -1,0 +1,37 @@
+<h1>Listing treks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Diff</th>
+      <th>Distance</th>
+      <th>Duration</th>
+      <th>Desc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @treks.each do |trek| %>
+      <tr>
+        <td><%= trek.name %></td>
+        <td><%= trek.url %></td>
+        <td><%= trek.diff %></td>
+        <td><%= trek.distance %></td>
+        <td><%= trek.duration %></td>
+        <td><%= trek.desc %></td>
+        <td><%= link_to 'Show', trek %></td>
+        <td><%= link_to 'Edit', edit_trek_path(trek) %></td>
+        <td><%= link_to 'Destroy', trek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trek', new_trek_path %>

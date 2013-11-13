@@ -11,17 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112174627) do
+ActiveRecord::Schema.define(version: 20131113143325) do
 
   create_table "mountains", force: true do |t|
-    t.integer "rank"
-    t.string  "name"
-    t.integer "height"
-    t.integer "hike_id"
+    t.integer  "rank"
+    t.string   "name"
+    t.integer  "height"
+    t.integer  "trek_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "treks", force: true do |t|
     t.string   "name"
+    t.string   "url"
+    t.string   "diff"
+    t.float    "distance"
+    t.string   "duration"
+    t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
