@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113143325) do
+ActiveRecord::Schema.define(version: 20131114022023) do
 
   create_table "mountains", force: true do |t|
     t.integer  "rank"
@@ -29,6 +29,29 @@ ActiveRecord::Schema.define(version: 20131113143325) do
     t.float    "distance"
     t.string   "duration"
     t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_mountains", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "mountain_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_mountains", ["mountain_id"], name: "index_user_mountains_on_mountain_id"
+  add_index "user_mountains", ["user_id"], name: "index_user_mountains_on_user_id"
+
+  create_table "user_treks", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "trek_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
