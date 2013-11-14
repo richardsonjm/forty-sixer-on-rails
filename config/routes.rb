@@ -9,6 +9,8 @@ FortySixerOnRails::Application.routes.draw do
   get '/mountains' => 'mountains#index'
   get '/mountains/:id' => 'mountains#show', as: 'mountain'
 
+  root 'users#index'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
