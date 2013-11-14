@@ -16,10 +16,15 @@
     <%= f.text_field :name %>
   </div>
 
+  <% @treks.each do |trek| %>
+    <%= check_box_tag "user[treks][]", trek.name, @user.treks.include?(trek), id: trek.name, value: trek.name %> 
+    <%= label_tag "#{trek.name}" %></br>
+  <% end %>
+
   <% @mountains.each do |mountain| %>
     <%= check_box_tag "user[mountains][]", mountain.name, @user.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
     <%= label_tag "#{mountain.name}" %></br>
-<% end %>
+  <% end %>
 
 
 
