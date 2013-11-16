@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :set_mountains, only:[:show, :edit, :update]
-  before_action :set_treks, only:[:show, :edit, :update]
+  before_action :set_mountains, only:[:show, :new, :edit, :update]
+  before_action :set_treks, only:[:show, :new, :edit, :update]
 
   # GET /users
   # GET /users.json

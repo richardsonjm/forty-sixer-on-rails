@@ -1,5 +1,5 @@
 class Mountain < ActiveRecord::Base
-  belongs_to :trek
+  has_many :treks, :through => :trek_mountains
 
    def self.find_mountain_from_mountains_array(mountains_array)
     mountains_array.collect do |mountain|

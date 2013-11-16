@@ -4,7 +4,6 @@ class CreateMountains < ActiveRecord::Migration
       t.integer :rank
       t.string :name
       t.integer :height
-      t.integer :trek_id
 
       t.timestamps
     end
