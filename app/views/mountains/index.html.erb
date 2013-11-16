@@ -1,5 +1,21 @@
-<ol>
-  <% @mountains.each do |mountain| %>
-    <li><%= link_to mountain.name, mountain %></li>
-  <%end%>
-</ol>
+<h1>ADK 46-R mountains</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Height</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mountains.each do |mountain| %>
+      <tr>
+        <td><%= mountain.rank %></td>
+        <td><%= mountain.name %></td>
+        <td><%= mountain.height %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -6,6 +6,16 @@
 </p>
 
 <p>
+  <strong>Treks Completed:</strong>
+</p>
+<ul>
+  <% @user.treks.each do |trek| %>
+    <li><%= trek.name %></li>
+  <% end %>
+</ul>
+
+
+<p>
   <strong>Mountains Climed:</strong>
 </p>
 <ul>
@@ -14,14 +24,13 @@
   <% end %>
 </ul>
 
-<p>
-  <strong>Treks Completed:</strong>
+<p> 
+  You've climed <b><%=@user.user_mountains.count %></b> 46-Rs!</br>
+  Only <b><%= 47 - @user.user_mountains.count %></b> more to go before the big time.
+
 </p>
-<ul>
-  <% @user.treks.each do |trek| %>
-    <li><%= trek.name %></li>
-  <% end %>
-</ul>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

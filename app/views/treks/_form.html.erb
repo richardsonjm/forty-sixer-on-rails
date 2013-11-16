@@ -15,26 +15,35 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
+
+  <% Mountain.order(:name).each do |mountain| %>
+    <%= check_box_tag "trek[mountains][]", mountain.name, @trek.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
+    <%= label_tag "#{mountain.name}" %></br>
+  <% end %>
+
+
+
+ <div class="field">
     <%= f.label :diff %><br>
-    <%= f.text_field :diff %>
+    <%= f.select :diff, [['Difficult'], ['Moderate'], ['Easy']] %>
   </div>
+
   <div class="field">
     <%= f.label :distance %><br>
     <%= f.text_field :distance %>
   </div>
+
+
   <div class="field">
     <%= f.label :duration %><br>
-    <%= f.text_field :duration %>
+    <%= f.select :duration, [['Multiple-days'], ['Full-day'], ['Half-day']] %>
   </div>
+
   <div class="field">
     <%= f.label :desc %><br>
     <%= f.text_area :desc %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

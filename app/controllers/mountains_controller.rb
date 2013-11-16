@@ -1,4 +1,4 @@
-class MountainsController < ActionController::Base
+class MountainsController < ApplicationController
   before_action :set_mountain, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -41,6 +41,7 @@ class TreksController < ApplicationController
   # PATCH/PUT /treks/1
   # PATCH/PUT /treks/1.json
   def update
+    @trek.trek_mountains.clear
     respond_to do |format|
       if @trek.update(trek_params)
         format.html { redirect_to @trek, notice: 'Trek was successfully updated.' }
@@ -74,6 +75,6 @@ class TreksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trek_params
-      params.require(:trek).permit(:name, :url, :diff, :distance, :duration, :desc)
+      params.require(:trek).permit(:name, :url, :diff, :distance, :duration, :desc, :mountains=>[])
     end
 end

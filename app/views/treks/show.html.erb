@@ -2,12 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @trek.name %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @trek.url %>
+  <%= link_to_if(@trek.url, @trek.name, @trek.url) %>
 </p>
 
 <p>
