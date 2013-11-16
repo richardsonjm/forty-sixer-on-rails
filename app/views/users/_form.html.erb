@@ -16,16 +16,34 @@
     <%= f.text_field :name %>
   </div>
 
+<!--   <h3> New Hike </h3></br>
+    <div class="field">
+      <#%= f.fields_for :treks, Trek.new do |trek_form| %>
+       <#%= trek_form.text_field :name %>
+      <#% end %>
+    </div>
+ -->
+<!--  <p>
+    New Hike</br>
+    <select name="user_trek[trek_ids_to_add][]">
+      <#% @treks.each do |trek| %>
+      <option value="<#%= trek.id %>"><#%= trek.name %></option>
+      <#% end %>
+    </select>
+  </p>
+ -->
+
+
   <% @treks.each do |trek| %>
     <%= check_box_tag "user[treks][]", trek.name, @user.treks.include?(trek), id: trek.name, value: trek.name %> 
     <%= label_tag "#{trek.name}" %></br>
   <% end %>
 
-  <% @mountains.each do |mountain| %>
-    <%= check_box_tag "user[mountains][]", mountain.name, @user.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
-    <%= label_tag "#{mountain.name}" %></br>
-  <% end %>
-
+<!--   <#% @mountains.each do |mountain| %>
+    <#%= check_box_tag "user[mountains][]", mountain.name, @user.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
+    <#%= label_tag "#{mountain.name}" %></br>
+  <#% end %>
+ -->
 
 
   <div class="actions">

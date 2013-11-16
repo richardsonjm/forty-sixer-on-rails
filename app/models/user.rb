@@ -18,11 +18,18 @@ class User < ActiveRecord::Base
   def treks=(treks_array)
     Trek.find_trek_from_treks_array(treks_array).each do |trek|
       self.add_trek(trek)
+      trek.mountains.each do |mountain|
+        self.add_mountain(mountain)
+      end
     end
   end
 
   def add_trek(trek)
     self.user_treks.build(:trek => trek)
+  end
+
+  def add_mountain(mountain)
+    self.user_mountains.build(:mountain => mountain)
   end
 
 end
