@@ -1,7 +1,7 @@
 Models & Data structure:
 
 mountains
-name      id            trek_id
+name      id           
 
 
 treks

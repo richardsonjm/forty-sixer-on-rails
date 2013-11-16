@@ -23,21 +23,38 @@
       <#% end %>
     </div>
  -->
-<!--  <p>
-    New Hike</br>
-    <select name="user_trek[trek_ids_to_add][]">
-      <#% @treks.each do |trek| %>
-      <option value="<#%= trek.id %>"><#%= trek.name %></option>
-      <#% end %>
-    </select>
-  </p>
- -->
 
 
   <% @treks.each do |trek| %>
     <%= check_box_tag "user[treks][]", trek.name, @user.treks.include?(trek), id: trek.name, value: trek.name %> 
     <%= label_tag "#{trek.name}" %></br>
   <% end %>
+
+<h3> Don't see your hike listed? </h3>
+Create a new hike <%= link_to 'here', new_trek_path %>
+ <!--  <p>
+    Add mountain
+    <select name="user[mountains][]">
+      <#% @mountains.each do |mountain| %>
+      <option value="<#%= mountain.name %>"><#%= mountain.name %></option>
+      <#% end %>
+    </select>
+  </p>
+
+ <div class="field">
+    <#%= f.collection_select :user_mountains, Mountain.order(:name), :id, :name %> -->
+
+   <!--  collection_select(:post, :author_id, Author.all, :id, :name_with_initial, prompt: true) -->
+<!--   </div> -->
+<!--   <p>
+    Add mountain
+    <select name="user[mountains][]">
+      <#% @treks.each do |trek| %>
+      <option value="<#%= trek.id %>"><#%= trek.name %></option>
+      <#% end %>
+    </select>
+  </p> -->
+
 
 <!--   <#% @mountains.each do |mountain| %>
     <#%= check_box_tag "user[mountains][]", mountain.name, @user.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
