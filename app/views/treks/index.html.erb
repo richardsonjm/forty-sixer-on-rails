@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>EveryTrial</th>
+      <th>Navigation</th>
       <th>Diff</th>
       <th>Distance</th>
       <th>Duration</th>
@@ -19,7 +19,7 @@
     <% @treks.each do |trek| %>
       <tr>
         <td><%= link_to trek.name, trek %></td>
-        <td><%= link_to_if(trek.url, 'EveryTrial', trek.url) %></td>
+        <td><%= link_to_if(trek.url, 'Navigation', trek.url) %></td>
         <td><%= trek.diff %></td>
         <td><%= trek.distance %></td>
         <td><%= trek.duration %></td>

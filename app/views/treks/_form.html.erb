@@ -19,9 +19,12 @@
   <% Mountain.order(:name).each do |mountain| %>
     <%= check_box_tag "trek[mountains][]", mountain.name, @trek.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
     <%= label_tag "#{mountain.name}" %></br>
-  <% end %>
+  <% end %></br>
 
-
+  <div class="field">
+    <%= f.label :url, 'Navigation' %><br>
+    <%= f.text_field :url %>
+  </div>
 
  <div class="field">
     <%= f.label :diff %><br>
