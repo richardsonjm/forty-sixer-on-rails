@@ -1,19 +1,20 @@
-<h1>ADK 46-R mountains</h1>
-
-<table>
+  <%- model_class = Mountain -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Rank</th>
-      <th>Name</th>
-      <th>Height</th>
+      <th><%= model_class.human_attribute_name(:rank) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:height) %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @mountains.each do |mountain| %>
       <tr>
         <td><%= mountain.rank %></td>
-        <td><%= mountain.name %></td>
+        <td><%= link_to mountain.name, mountain_path(mountain) %></td>
         <td><%= mountain.height %></td>
       </tr>
     <% end %>

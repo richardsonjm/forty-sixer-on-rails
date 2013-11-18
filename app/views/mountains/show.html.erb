@@ -1,5 +1,18 @@
-<ul>
-  <li>Name: <%= @mountain.name %></li>
-  <li>Rank: <%= @mountain.rank %></li>
-  <li>Height: <%= @mountain.height %></li>
-</ul>
+<%- model_class = Mountain -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:rank) %>:</strong></dt>
+  <dd><%= @mountain.rank %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @mountain.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:height) %>:</strong></dt>
+  <dd><%= @mountain.height %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              mountains_path, :class => 'btn'  %>
+</div>
