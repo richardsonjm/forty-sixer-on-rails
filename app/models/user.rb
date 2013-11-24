@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :mountains, :through => :user_mountains
   has_many :user_mountains
   has_many :user_treks
+  has_secure_password
 
 
   def mountains=(mountains_array)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131115173110) do
+ActiveRecord::Schema.define(version: 20131124193603) do
 
   create_table "mountains", force: true do |t|
     t.integer  "rank"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20131115173110) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "password_digest"
   end
 
 end

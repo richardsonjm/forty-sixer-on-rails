@@ -1,0 +1,14 @@
+<!-- params = {
+  
+  :email => "user@email.com"
+}
+
+
+ -->
+
+<%= form_tag(sessions_path) do %> 
+  <%= text_field_tag :email %>
+  <%= text_field_tag :password %>
+
+  <%= submit_tag "Login" %>
+<% end %>

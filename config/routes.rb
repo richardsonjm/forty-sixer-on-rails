@@ -11,6 +11,10 @@ FortySixerOnRails::Application.routes.draw do
 
   root 'users#index'
 
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
+  post '/sessions' => 'sessions#create'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
