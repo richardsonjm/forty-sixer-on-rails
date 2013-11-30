@@ -1,4 +1,5 @@
 class TreksController < ApplicationController
+  skip_before_action :login_required, :only => [:index, :show]
   before_action :set_trek, only: [:show, :edit, :update, :destroy]
   before_action :set_mountains, only: [:show]
 
