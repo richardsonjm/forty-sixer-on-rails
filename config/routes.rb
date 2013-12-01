@@ -1,4 +1,10 @@
 FortySixerOnRails::Application.routes.draw do
+ 
+  match '/help',    to: 'static_pages#help',      via: 'get'
+  match '/about',   to: 'static_pages#about',     via: 'get'
+  match '/contact', to: 'static_pages#contact',   via: 'get'
+ 
+
   resources :users
   match '/signup', to: 'users#new',    via:'get'
 
@@ -10,7 +16,7 @@ FortySixerOnRails::Application.routes.draw do
   get '/mountains' => 'mountains#index'
   get '/mountains/:id' => 'mountains#show', as: 'mountain'
 
-  root 'users#index'
+  root 'static_pages#home'
 
   get 'login' => 'sessions#new'
   get 'logout' => 'sessions#destroy'

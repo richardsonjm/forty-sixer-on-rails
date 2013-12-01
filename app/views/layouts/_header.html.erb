@@ -1,0 +1,17 @@
+<header class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <nav>
+      <%= link_to 'Hikers', users_path %>
+      <%= link_to 'Mountains', mountains_path %>
+      <%= link_to 'Treks', treks_path %>
+      <% if logged_in? %>
+        Logged in as: <%= current_user.email %>
+        <%= link_to "logout", logout_path %>
+      <% else %>
+        <%= link_to 'Login', login_path %>
+      <% end %>
+      </nav>
+    </div>
+  </div>
+</header>

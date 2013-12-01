@@ -1,14 +1,20 @@
-<!-- params = {
-  
-  :email => "user@email.com"
-}
+<% provide(:title, "Login") %>
+<h1>Login</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_tag(sessions_path) do %> 
+      
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+
+      <%= submit_tag "Login", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Signup!", signup_path %></p>
+  </div>
+</div>
 
 
- -->
-
-<%= form_tag(sessions_path) do %> 
-  <%= text_field_tag :email %>
-  <%= text_field_tag :password %>
-
-  <%= submit_tag "Login" %>
-<% end %>

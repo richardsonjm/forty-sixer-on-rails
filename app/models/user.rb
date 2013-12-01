@@ -1,9 +1,13 @@
 class User < ActiveRecord::Base
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+  before_save { self.email = email.downcase }
   has_many :treks, :through => :user_treks
   has_many :mountains, :through => :user_mountains
   has_many :user_mountains
   has_many :user_treks
   has_secure_password
+  validates :password, length: { minimum: 6 }
 
 
   def mountains=(mountains_array)

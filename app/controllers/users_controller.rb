@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  skip_before_action :login_required, only: [:new, :create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :set_mountains, only:[:show, :new, :edit, :update]
-  before_action :set_treks, only:[:show, :new, :edit, :update]
+  before_action :set_treks, only:[:show, :new, :edit, :update, :create]
 
   # GET /users
   # GET /users.json
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
-        format.html { render action: 'new' }
+        format.html { render 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

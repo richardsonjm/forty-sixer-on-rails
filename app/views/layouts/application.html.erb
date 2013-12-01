@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>FortySixerOnRails</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= link_to 'Hikers', users_path %>
-  <%= link_to 'Mountains', mountains_path %>
-  <%= link_to 'Treks', treks_path %>
-  <% if logged_in? %>
-    Logged in as: <%= current_user.email %>
-    <%= link_to "logout", logout_path %>
-  <% else %>
-    <%= link_to 'Login', login_path %>
-  <% end %>
-
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>FortySixerOnRails | <%= yield(:title) %></title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
 </html>
