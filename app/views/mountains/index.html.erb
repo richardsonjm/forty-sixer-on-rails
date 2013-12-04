@@ -1,21 +1,24 @@
-<h1>ADK 46-R mountains</h1>
+<div class="panel panel-default col-md-4 pull-left">
+  <!-- Default panel contents -->
+  <div class="panel-heading">ADK 46-R mountains</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Height</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Name</th>
-      <th>Height</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @mountains.each do |mountain| %>
-      <tr>
-        <td><%= mountain.rank %></td>
-        <td><%= mountain.name %></td>
-        <td><%= mountain.height %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @mountains.each do |mountain| %>
+          <tr>
+            <td><%= mountain.rank %></td>
+            <td><%= link_to mountain.name, mountain %></td>
+            <td><%= mountain.height %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
