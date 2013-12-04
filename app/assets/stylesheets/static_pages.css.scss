@@ -1,3 +1,10 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.background { 
+  background-image: url("whiteface.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 20%; 
+}
