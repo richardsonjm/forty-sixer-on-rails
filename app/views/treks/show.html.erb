@@ -1,36 +1,38 @@
 <p id="notice"><%= notice %></p>
+<div class="panel panel-default col-md-3">
+  <div class="panel-body">
+    <p>
+      <strong>Name:</strong>
+      <%= link_to_if(@trek.url, @trek.name, @trek.url) %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= link_to_if(@trek.url, @trek.name, @trek.url) %>
-</p>
+    <p>
+      <strong>Diff:</strong>
+      <%= @trek.diff %>
+    </p>
 
-<p>
-  <strong>Diff:</strong>
-  <%= @trek.diff %>
-</p>
+    <p>
+      <strong>Distance:</strong>
+      <%= @trek.distance %>
+    </p>
 
-<p>
-  <strong>Distance:</strong>
-  <%= @trek.distance %>
-</p>
+    <p>
+      <strong>Duration:</strong>
+      <%= @trek.duration %>
+    </p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @trek.duration %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @trek.desc %>
-</p>
-
-<ul>
-  <strong>Mountains:</strong>
-  <% @trek.mountains.each do |mountain| %>
-  <li><%= mountain.name %></li>
-  <%end%>
-</ul>
-
-<%= link_to 'Edit', edit_trek_path(@trek) %> |
-<%= link_to 'Back', treks_path %>
+    <p>
+      <strong>Desc:</strong>
+      <%= @trek.desc %>
+    </p>
+    
+    <p>
+    <strong>46-R mountains:</strong></br>
+      <% @trek.mountains.each do |mountain| %>
+        <%= mountain.name %></br>
+      <%end%>
+      </p>
+    
+  
+  </div>
+</div>

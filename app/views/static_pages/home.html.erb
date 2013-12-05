@@ -3,5 +3,9 @@
 <div class="jumbotron wrapper">
   <h1>ADK 46-R Tracker</h1>
   <p>Track your progress towards completing your ADK 46-R</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="/login">Log-in</a></p>
+  <% if logged_in? %>
+    <p><a class="btn btn-primary btn-lg" role="button" href="users/<%=current_user.id%>">View Your Page</a></p>
+  <% else %>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/login">Log-in</a></p>
+  <% end %>
 </div>

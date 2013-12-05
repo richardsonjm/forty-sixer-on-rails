@@ -12,29 +12,31 @@
   <% end %>
 
 <div class= "panel panel-default col-md-3">
-  <h3>Hiker info:</h3>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+  <div class="panel-body">
+    <h3>Hiker info:</h3>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
+    <div class="field">
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation %>
+    </div>
 
-  <div>
-    <%= f.submit %>
+    <div>
+      <%= f.submit %>
+    </div>
   </div>
 </div>
 <!--   <h3> New Hike </h3></br>
@@ -44,16 +46,32 @@
       <#% end %>
     </div>
  -->
-<div class="col-md-3 col-md-offset-1 panel panel-default">
-  <h3> Forty-sixers climbed: </h3>
-    <% @mountains.each do |mountain| %>
-      <%= check_box_tag "user[mountains][]", mountain.name, @user.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
-    <%= label_tag "#{mountain.name}" %></br>
-  <% end %>
+<% if logged_in? %>
+  <div class="col-md-6 col-md-offset-1 panel panel-default">
+    <div class="panel-body">
+    <h3> Hikes completed: </h3>
+      <% @treks.each do |trek| %>
+        <%= check_box_tag "user[treks][]", trek.name, @user.treks.include?(trek), id: trek.name, value: trek.name %> 
+      <%= label_tag "#{trek.name}" %></br>
+      <% end %>
+  </div>
+  <h3> Don't see your hike listed? </h3>
+      Create a new hike <%= link_to 'here', new_trek_path %></br></br>
+   </div> 
+<% else %>
+<!--   <div class="col-md-3 col-md-offset-1 panel panel-default">
+    <div class="panel-body">
+    <h3> Forty-sixers climbed: </h3>
+      <#% @mountains.each do |mountain| %>
+        <#%= check_box_tag "user[mountains][]", mountain.name, @user.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
+      <#%= label_tag "#{mountain.name}" %></br>
+    <#% end %>
+    </div> -->
+  </div>
+<% end %>
 
-<!--   <h3> Don't see your hike listed? </h3>
-  Create a new hike <#%= link_to 'here', new_trek_path %></br></br>
-</div> -->
+
+
  <!--  <p>
     Add mountain
     <select name="user[mountains][]">

@@ -11,43 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class= "panel panel-default col-md-3">
+  <div class="panel-body">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <% Mountain.order(:name).each do |mountain| %>
+      <%= check_box_tag "trek[mountains][]", mountain.name, @trek.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
+      <%= label_tag "#{mountain.name}" %></br>
+    <% end %></br>
+
+    <div class="field">
+      <%= f.label :url, 'Navigation' %><br>
+      <%= f.text_field :url %>
+    </div>
+
+   <div class="field">
+      <%= f.label :diff %><br>
+      <%= f.select :diff, [['Difficult'], ['Moderate'], ['Easy']] %>
+    </div>
+
+    <div class="field">
+      <%= f.label :distance %><br>
+      <%= f.text_field :distance %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :duration %><br>
+      <%= f.select :duration, [['Multiple-days'], ['Full-day'], ['Half-day']] %>
+    </div>
+
+    <div class="field">
+      <%= f.label :desc %><br>
+      <%= f.text_area :desc %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
-
-  <% Mountain.order(:name).each do |mountain| %>
-    <%= check_box_tag "trek[mountains][]", mountain.name, @trek.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
-    <%= label_tag "#{mountain.name}" %></br>
-  <% end %></br>
-
-  <div class="field">
-    <%= f.label :url, 'Navigation' %><br>
-    <%= f.text_field :url %>
-  </div>
-
- <div class="field">
-    <%= f.label :diff %><br>
-    <%= f.select :diff, [['Difficult'], ['Moderate'], ['Easy']] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :distance %><br>
-    <%= f.text_field :distance %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :duration %><br>
-    <%= f.select :duration, [['Multiple-days'], ['Full-day'], ['Half-day']] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :desc %><br>
-    <%= f.text_area :desc %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

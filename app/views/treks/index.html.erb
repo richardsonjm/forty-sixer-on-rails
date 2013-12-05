@@ -1,36 +1,32 @@
-<h1>Listing treks</h1>
+<div class="panel panel-default col-md-8 pull-left">
+  <div class="panel-heading">Recommended hikes:</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Navigation</th>
+          <th>Diff</th>
+          <th>Distance</th>
+          <th>Duration</th>
+          <th>Desc</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Navigation</th>
-      <th>Diff</th>
-      <th>Distance</th>
-      <th>Duration</th>
-      <th>Desc</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @treks.each do |trek| %>
-      <tr>
-        <td><%= link_to trek.name, trek %></td>
-        <td><%= link_to_if(trek.url, 'Navigation', trek.url) %></td>
-        <td><%= trek.diff %></td>
-        <td><%= trek.distance %></td>
-        <td><%= trek.duration %></td>
-        <td><%= trek.desc %></td>
-        <td><%= link_to 'Show', trek %></td>
-        <td><%= link_to 'Edit', edit_trek_path(trek) %></td>
-        <td><%= link_to 'Destroy', trek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @treks.each do |trek| %>
+          <tr>
+            <td><%= link_to trek.name, trek %></td>
+            <td><%= link_to_if(trek.url, 'Navigation', trek.url) %></td>
+            <td><%= trek.diff %></td>
+            <td><%= trek.distance %></td>
+            <td><%= trek.duration %></td>
+            <td><%= trek.desc %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 
