@@ -9,6 +9,7 @@
           <th>Distance</th>
           <th>Duration</th>
           <th>Desc</th>
+          <th></th>
         </tr>
       </thead>
 
@@ -21,6 +22,7 @@
             <td><%= trek.distance %></td>
             <td><%= trek.duration %></td>
             <td><%= trek.desc %></td>
+            <td><%= link_to 'Destroy', trek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

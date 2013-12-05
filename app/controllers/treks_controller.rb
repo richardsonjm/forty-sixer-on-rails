@@ -29,7 +29,10 @@ class TreksController < ApplicationController
     @trek = Trek.new(trek_params)
 
     respond_to do |format|
-      if @trek.save
+      if @trek.save && logged_in?
+        format.html { redirect_to "/users/#{current_user.id}/edit", notice: 'Trek was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @trek }
+      elsif @trek.save
         format.html { redirect_to @trek, notice: 'Trek was successfully created.' }
         format.json { render action: 'show', status: :created, location: @trek }
       else

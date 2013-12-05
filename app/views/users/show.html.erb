@@ -1,36 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-default col-md-3">
-    <div class="panel-body">
-  <p>
-    <h3><%= @user.name %></h3>
-  </p>
-  
-  <p>
-  <% if @user.treks.count > 0 %>
-    <strong>Treks Completed:</strong>
-  <ul>
-    <% @user.treks.each do |trek| %>
-      <li><%= trek.name %></li>
+  <div class="panel-body">
+    <p>
+      <h3><%= @user.name %></h3>
+    </p>
+    
+    <p>
+    <% if @user.treks.count > 0 %>
+      <strong>Treks Completed:</strong>
+    <ul>
+      <% @user.treks.each do |trek| %>
+        <li><%= trek.name %></li>
+      <% end %>
+    </ul>
     <% end %>
-  </ul>
-  <% end %>
-  </p>
+    </p>
 
-  <p>
-    <strong>Mountains Climed:</strong>
-  </p>
-  <ul>
-    <% @user.mountains.each do |mountain| %>
-      <li><%= mountain.name %></li>
-    <% end %>
-  </ul>
+    <p>
+      <strong>Mountains Climed:</strong>
+    </p>
+    <ul>
+      <% @user.mountains.each do |mountain| %>
+        <li><%= mountain.name %></li>
+      <% end %>
+    </ul>
 
-  <p> 
-    You've climed <b><%=@user.user_mountains.count %></b> 46-Rs!</br>
-    Only <b><%= 47 - @user.user_mountains.count %></b> more to go before the big time.
-  </p>
+    <p> 
+      You've climed <b><%=@user.user_mountains.count %></b> 46-Rs!</br>
+      Only <b><%= 47 - @user.user_mountains.count %></b> more to go before the big time.
+    </p>
 
-  <strong><%= link_to 'Edit', edit_user_path(@user) %></strong>
+    <strong><%= link_to 'Edit your profile', edit_user_path(@user) %></strong>
   </div>
 </div>
