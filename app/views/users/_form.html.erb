@@ -34,6 +34,11 @@
       <%= f.password_field :password_confirmation %>
     </div>
 
+<!--     <%# if logged_in? %>
+    <div class="show-list" data-id="1"> Add mountains </div></br>
+    <div class="show-list" data-id="2"> Add hikes </div></br>
+    <%# end %>
+ -->
     <div>
       <%= f.submit %>
     </div>
@@ -58,7 +63,16 @@
   <h3> Don't see your hike listed? </h3>
       Create a new hike <%= link_to 'here', new_trek_path %></br></br>
    </div> 
-<% else %>
+<!--   <div class="col-md-3 col-md-offset-1 panel panel-default readme" id="p1">
+    <div class="panel-body">
+    <h3> Forty-sixers climbed: </h3>
+      <%# @mountains.order(:name).each do |mountain| %>
+        <#%= check_box_tag "user[mountains][]", mountain.name, @user.mountains.include?(mountain), id: mountain.name, value: mountain.name %> 
+      <#%= label_tag "#{mountain.name}" %></br>
+    <%# end %>
+    </div>
+  </div> -->
+<%# else %>
 <!--   <div class="col-md-3 col-md-offset-1 panel panel-default">
     <div class="panel-body">
     <h3> Forty-sixers climbed: </h3>
@@ -67,7 +81,7 @@
       <#%= label_tag "#{mountain.name}" %></br>
     <#% end %>
     </div> -->
-  </div>
+  <!-- </div> -->
 <% end %>
 
 

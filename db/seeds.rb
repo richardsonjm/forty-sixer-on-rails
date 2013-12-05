@@ -3,9 +3,9 @@
 # Do not hesitate to tweak this to your needs
 
 User.create([
-  {:name => "Lila", :email => "lilajoyrichardson@gmail.com", :password => 'test1', :password_confirmation => 'test1' },
-  {:name => "Michelle", :email => "hessbot@yahoo.com", :password => 'test2', :password_confirmation => 'test2' },
-  {:name => "Jack", :email => "jackhenryrichardson@gmail.com", :password => 'test3', :password_confirmation => 'test3' }
+  {:name => "Lila", :email => "lilajoyrichardson@gmail.com", :password => 'foobar', :password_confirmation => 'foobar' },
+  {:name => "Michelle", :email => "hessbot@yahoo.com", :password => 'foobar', :password_confirmation => 'foobar' },
+  {:name => "Jack", :email => "jackhenryrichardson@gmail.com", :password => 'foobar', :password_confirmation => 'foobar' }
 ])
 
 
