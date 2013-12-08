@@ -1,14 +1,18 @@
-$('.show_list').show(); //show buttons
-$('.readme').hide(); // hide all readmes
- 
-$('.show_list').click(function(){
+$(document).ready(function(){
+  $('#mountains-link').click(function(){
+      $('#mountains').toggle();
+  });
 
-    var readme_id = $(this).data('id');
-    if ($('#p'+readme_id).css('display')!='none'){
-      $('.readme').hide();
-    } 
-    else{
-      $('.readme').hide();
-      $('#p'+readme_id).fadeToggle(200, "linear");
-    }  
+  $('#hikes-link').click(function(){
+      $('#hikes').toggle();
+  });
+
+  $('#mountains-link').on('mouseover', function(){
+     $(this).css( 'cursor', 'pointer' );
+  });
+
+    $('#hikes-link').on('mouseover', function(){
+     $(this).css( 'cursor', 'pointer' );
+  });
+
 });
