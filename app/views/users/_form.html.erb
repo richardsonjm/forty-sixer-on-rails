@@ -56,6 +56,18 @@
     </div>
  -->
 <% if logged_in? %>
+  <div class="col-md-5 col-md-offset-1 panel panel-default" id="hikes">
+    <div class="panel-body">
+    <h3> Hikes completed: </h3>
+      <% @treks.each do |trek| %>
+        <%= check_box_tag "user[treks][]", trek.name, @user.treks.include?(trek), id: trek.name, value: trek.name %> 
+      <%= label_tag "#{trek.name}" %></br>
+      <% end %>
+    </div>
+    <h3> Don't see your hike listed? </h3>
+      Create a new hike <%= link_to 'here', new_trek_path, remote: true, id: "new-hike" %></br></br>
+   </div> 
+
   <div class="col-md-2 col-md-offset-1 panel panel-default" id="mountains">
     <div class="panel-body" >
     <h3> Forty-sixers climbed: </h3>
@@ -65,17 +77,6 @@
     <% end %>
     </div>
   </div>
-  <div class="col-md-5 col-md-offset-1 panel panel-default" id="hikes">
-    <div class="panel-body">
-    <h3> Hikes completed: </h3>
-      <% @treks.each do |trek| %>
-        <%= check_box_tag "user[treks][]", trek.name, @user.treks.include?(trek), id: trek.name, value: trek.name %> 
-      <%= label_tag "#{trek.name}" %></br>
-      <% end %>
-  </div>
-    <h3> Don't see your hike listed? </h3>
-      Create a new hike <%= link_to 'here', new_trek_path %></br></br>
-   </div> 
 <%# else %>
 <!--   <div class="col-md-3 col-md-offset-1 panel panel-default">
     <div class="panel-body">
