@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-
+    @trek = Trek.new
   end
 
   # GET /users/new
@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    # @trek = Trek.new
   end
 
   # POST /users

@@ -11,7 +11,16 @@ $(document).ready(function(){
      $(this).css( 'cursor', 'pointer' );
   });
 
-    $('#hikes-link').on('mouseover', function(){
+  $('#hikes-link').on('mouseover', function(){
+     $(this).css( 'cursor', 'pointer' );
+  });
+
+   $('#new-hike-link').click(function(){
+      $('#new-hike').toggle();
+      $('#hikes').toggle();
+  });
+
+  $('#new-hike-link').on('mouseover', function(){
      $(this).css( 'cursor', 'pointer' );
   });
 

@@ -29,8 +29,46 @@
     <p> 
       You've climed <b><%=@user.user_mountains.count %></b> 46-Rs!</br>
       Only <b><%= 47 - @user.user_mountains.count %></b> more to go before the big time.
-    </p>
+    </p></br>
 
-    <strong><%= link_to 'Edit your profile', edit_user_path(@user) %></strong>
+
+    <strong id="hikes-link">Add hikes</strong></br></br>
+
+    <strong><%= link_to 'Account Settings', edit_user_path(@user) %></strong>
   </div>
+</div>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <div class="col-md-4 col-md-offset-1 panel panel-default" id="hikes">
+      <div class="panel-body">
+      <h3> Hikes completed: </h3>
+        <% @treks.each do |trek| %>
+          <%= check_box_tag "user[treks][]", trek.name, @user.treks.include?(trek), id: trek.name, value: trek.name %> 
+        <%= label_tag "#{trek.name}" %></br>
+        <% end %>
+      </div>
+
+    <div>
+      <%= f.submit %>
+    </div>
+<% end %>
+  <h3> Don't see your hike listed? </h3>
+    <p id= "new-hike-link">Create a new hike <b>here<b></br></br>
+ </div> 
+
+<div id="new-hike">
+    <%= render 'treks/form' %>
 </div>
