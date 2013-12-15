@@ -11,8 +11,8 @@ describe Trek do
   it { should respond_to(:desc) }
 
   describe "associations" do
-    let(:everest) {FactoryGirl.build(:everest) }
-    let(:k2) {FactoryGirl.build(:k2) }
+    let(:everest) { FactoryGirl.build(:everest) }
+    let(:k2) { FactoryGirl.build(:k2) }
 
     it "has a mountain" do
       widow_maker.trek_mountains.build(:mountain => everest)

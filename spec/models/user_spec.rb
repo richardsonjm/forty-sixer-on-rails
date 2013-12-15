@@ -66,20 +66,20 @@ describe User do
   end
 
   describe "associations" do
-    before { @user = FactoryGirl.build(:brody) }
+    let(:brody) { FactoryGirl.build(:brody) }
+    let(:everest) { FactoryGirl.build(:everest) }
+    let(:widow_maker) { FactoryGirl.build(:widow_maker) }
     
     it "has a mountain" do
-      everest = FactoryGirl.build(:everest)
-      @user.user_mountains.build(:mountain => everest)
+      brody.user_mountains.build(:mountain => everest)
 
-      expect(@user.mountains).to include(everest)
+      expect(brody.mountains).to include(everest)
     end
 
     it "has a trek" do
-      widow_maker = FactoryGirl.build(:widow_maker)
-      @user.user_treks.build(:trek => widow_maker)
+      brody.user_treks.build(:trek => widow_maker)
 
-      expect(@user.treks).to include(widow_maker)
+      expect(brody.treks).to include(widow_maker)
     end
   end
 

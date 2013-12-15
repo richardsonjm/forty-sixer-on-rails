@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Mountain do
-  let(:everest) {FactoryGirl.build(:everest) }
+  let(:everest) { FactoryGirl.build(:everest) }
 
   it { should respond_to(:name) }
   it { should respond_to(:rank) }
@@ -9,8 +9,8 @@ describe Mountain do
 
 
   describe "associations" do
-    let(:widow_maker) {FactoryGirl.build(:widow_maker)}
-    let(:funday) {FactoryGirl.build(:funday)}
+    let(:widow_maker) { FactoryGirl.build(:widow_maker) }
+    let(:funday) { FactoryGirl.build(:funday) }
 
     it "has a trek" do
       everest.trek_mountains.build(:trek => widow_maker)
