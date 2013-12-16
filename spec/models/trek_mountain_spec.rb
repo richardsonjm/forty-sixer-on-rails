@@ -1,9 +1,16 @@
 require 'spec_helper'
 
 describe TrekMountain do
-  before { FactoryGirl.create(:trek_with_mountain) }
+  let(:widow_maker) { FactoryGirl.create(:widow_maker) }
+  let(:everest) { FactoryGirl.create(:everest) }
 
-  binding.pry
   it { should respond_to(:trek_id) }
   it { should respond_to(:mountain_id) }
+
+  it "associates treks and mountains" do
+    everest.trek_mountains.create(:trek => widow_maker)
+    expect(everest.treks).to include(widow_maker)
+    expect(widow_maker.mountains).to include(everest)
+  end
+  
 end
