@@ -25,6 +25,8 @@ gem 'jquery-rails'
 
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
+
+gem 'rails_12factor', group: :production
                               
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
